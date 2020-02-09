@@ -1,0 +1,102 @@
+body {
+    text-align: center;
+}
+#newgame{
+    display: block;
+}
+#over{
+    display: none;
+}
+/*
+ * Styles for the modal
+ */
+ /*correct icon animation*/
+ svg {
+    width: 100px;
+    display: block;
+    margin: 40px auto 0;
+  }
+  .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+  .path.circle {
+    animation: dash 0.9s ease-in-out;
+  }
+  .path.line {
+    stroke-dashoffset: 1000;
+    animation: dash 0.9s 0.35s ease-in-out forwards;
+  }
+  .path.check {
+    stroke-dashoffset: -100;
+    animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  }
+  p {
+    text-align: center;
+    margin: 20px 0 60px;
+    font-size: 1.25em;
+  }
+  p.success {
+    color: #77b11c;
+  }
+  @keyframes dash 
+    {0% {stroke-dashoffset: 1000;}
+    100% {stroke-dashoffset: 0;}
+  }
+  @keyframes dash-check {
+    0% {stroke-dashoffset: -100;}
+    100% {stroke-dashoffset: 900;}
+  }
+ /************* Modal Styles**********/
+  .modal__overlay {
+    display: none;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: -800;
+  } 
+  .modal__overlay {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 800;
+  }
+  .modal__box {
+    padding: 1em .75em;
+    position: relative;
+    margin: 1em auto;
+    max-width: 500px;
+    width: 90%;
+  }
+  @media (min-height: 37.5em) {
+  
+  .modal__box {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -80%);
+    -ms-transform: translate(-50%, -80%);
+    transform: translate(-50%, -80%);
+  }
+  }
+  @media (min-width: 50em) {
+  
+  .modal__box { padding: 1.75em; }
+  }
+ /* *** Button Styles *****/ 
+  .btn {
+    color: white;
+    cursor: pointer;
+    background-color: #77b11c;
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em 2em;
+  }
